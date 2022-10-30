@@ -9,7 +9,7 @@ player on their right.
 
 This will continue until all crates are empty and all items have been picked. There
 will be three repitions of this; one for weapons/offensive items, another for armor,
-and the last for acccessary items such as food, potions and unique abilities.
+and the last for accessory items such as food, potions and unique abilities.
 
 Once the game begins, it's a free-for-all and the last player alive wins. Loot is
 dropped on death, and there also will be an in-game crafting system that allows
