@@ -2,7 +2,11 @@ package gebo.player;
 
 import gebo.Arena;
 import gebo.SQLManager;
+import gebo.display.ArenaScoreboard;
+import gebo.game.GameInstance;
+import gebo.util.StoredValue;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -17,6 +21,7 @@ public class PlayerProfile {
     private UUID id;
     private ArrayList<SQLManager.Stat> stats;
     private Player p;
+    private ArenaScoreboard current_board;
 
     public PlayerProfile(Player p) {
         this.p = p;
@@ -100,6 +105,16 @@ public class PlayerProfile {
             }
         }
         return null;
+    }
+
+    public void updateScoreboard() {
+        switch(GameInstance.get().getState()) {
+            case WAITING: current_board = new ArenaScoreboard(ChatColor.GOLD + "Arena", p)
+                    .addLine("Line 1").addLine("Line 2").addLine(" ")
+                    .addScoreLine("Gold: ", new StoredValue(getStatValue("gold"))); break;
+            default: current_board = new ArenaScoreboard("Test", p); break;
+        }
+        current_board.display();
     }
 
 }

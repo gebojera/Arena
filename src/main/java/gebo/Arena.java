@@ -70,6 +70,6 @@ public class Arena extends JavaPlugin {
     }
 
     public enum GameState {
-        WAITING, STARTING, PLAYING, ENDING
+        WAITING, STARTING, DRAFTING, PLAYING, ENDING
     }
 }
