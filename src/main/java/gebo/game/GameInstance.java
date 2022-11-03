@@ -114,6 +114,10 @@ public class GameInstance {
         current = map;
     }
 
+    public Map getMap() {
+        return current;
+    }
+
     public Arena.GameState getState() {
         return state;
     }
